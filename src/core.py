@@ -40,5 +40,20 @@ def congrats():
     clear_terminal()
 
 
+# main menu of the app
+def main_menu():
+    file = open("./data/main_menu.txt", "r")
+    contents = file.read()
+    print(contents)
+    file.close()
 
+
+# thank you message
+def thank_you():
+    clear_terminal()
+    file = open("./data/thank_you.txt", "r")
+    contents = file.read()
+    print(contents)
+    file.close()
+    
 

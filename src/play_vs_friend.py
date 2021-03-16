@@ -1,12 +1,4 @@
-
 import core # unresolved import -> select the correct Python interpreter
-
-# functions
-core.clear_terminal()
-core.welcome_message()
-core.press_enter()
-
-
 
 
 # Global variables
@@ -22,7 +14,6 @@ game_still_going = True
 winner = None
 
 # who's turn is it?
-
 current_player = "X"
 
 def display_board():
@@ -53,7 +44,7 @@ def play_game():
     # the game has ended
     if winner == "X" or winner == "0":
         print(winner + " won.")
-        core.congrats()
+        core.congrats() # importing congrats.txt from core
     elif winner == None:
         print("Tie.")
 
@@ -111,7 +102,6 @@ def check_for_winner():
     return
 
 
-
 def check_rows():
     # set up a global variable
     global game_still_going
@@ -155,6 +145,7 @@ def check_columns():
         return board[2]
     return
 
+
 def check_diagonals():
         # set up a global variable
     global game_still_going
@@ -172,6 +163,7 @@ def check_diagonals():
     elif diagonals_2:
         return board[6]
     return
+
 
 def check_if_tie():
     global game_still_going
