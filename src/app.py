@@ -1,4 +1,4 @@
-import sys
+import sys # exit the programme cleanly
 import core # unresolved import -> select the correct Python interpreter
 import os
 
@@ -21,4 +21,4 @@ while True:
     elif user == "1":
         core.clear_terminal()
         print("\n")
-        import play_vs_friend # impporting py file - is there a better way of importing the file?
+        import play_vs_friend # impporting py file - is there a better way of importing the file?###
