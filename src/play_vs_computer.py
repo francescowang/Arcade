@@ -1,137 +1,111 @@
+import random
 
 
-
-board = ['#','#','#','#','#','#','#','#','#','#']
-
-# This function takes the board list as a parameter and replaces the case number 
-# inside the blankBoard with either the player’s choice or a blank space.
-def display_board(board):
-    blank_board = """
-    
-|-----------------|
-|  1  |  2  |  3  |
-|-----------------|
-|  4  |  5  |  6  |
-|-----------------|
-|  7  |  8  |  9  |
-|-----------------|
-    
-"""
-    for num in range(1,10):
-        if(board[num] == "O" or board[num] == "X"):
-            blank_board = blank_board.replace(str(num), board[num])
-        else:
-            blank_board = blank_board.replace(str(num), ' ')
-    print(blank_board)
+boxes = [ ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ]
+HUMAN = 'X'
+COMPUTER = '0'
+first_player = HUMAN
+turn = 1
+winning_combos = [  [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6],
+                    [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6], ]
 
 
-# The second function will ask player one which marker they want. Choices can be X/x or O/o. 
-# If another choice is made by the user, the program must re-ask for an input.
-def player_input():
-    player1 = input("Please pick a marker 'X' or 'O': ")
+def print_board(initial=False):
+    """ Print the game board. If this is the beginning of the game,
+        print out 1-9 in the boxes to show players how to pick a
+        box. Otherwise, update each box with X or 0 from boxes[].
+    """
+    print(("""
+            {} | {} | {}
+            -----------
+            {} | {} | {}
+            -----------
+            {} | {} | {}
+        """).format(*([x for x in range(1, 10)] if initial else boxes)))
+
+
+def take_turn(player, turn):
+    """ Create a loop that keeps asking the current player for
+        their input until a valid choice is made.
+    """
+
     while True:
-        if player1.upper() == "X":
-            player2 = "O"
-            print("You have choosen " + player1 + ". Player 2 will be " + player2)
-            return player1.upper(), player2
-        elif player1.upper() == "O":
-            player2 = "X"
-            print("You have choosen " + player1 + ". Player 2 will be " + player2)
-            return player1.upper(), player2
+        if player is COMPUTER:
+            box = get_computer_move()
         else:
-            player1 = input("Please pick a marker 'X' or 'O': ")
+            box = input('Player %s, type a number from 1-9 to select a box: ' % player)
 
-# Here, we simply use a while True statement, which will be exited by a return if the input matches the possibilities. 
-# Note that we are applying the input if player1.upper() == ‘X’: to avoid double checks.
+            try:
+                box = int(box) - 1 # subtract 1 to sync with boxes[] index numbers
+            except ValueError:
+                # Not an integer
+                print('That\'s not a valid number, try again.\n')
+                continue
 
+        if box < 0 or box > 8:
+            print('That number is out of range, try again.\n')
+            continue
 
-# The third function will be the place_marker.
-def place_marker(board, marker, position):
-    board[position] = marker
-    return board
-
-# We just pass the board list, the marker, and the position chosen. 
-# The function will assign the marker to our list, replacing the # character at the given position.
-
-
-# Hereafter, both our functions will ask the player for a position and check whether the chosen position is empty or not. 
-# These two functions are linked, and that’s why I put these two behind together.
-def space_check(board, position):
-    return board[position] == "#"
-def player_choice(board):
-    choice = input("Please select an empty space between 1 and 9: ")
-    while not space_check(board, int(choice)):
-        choice = input("This space is not free. Please choose between 1 and 9: ")
-    return choice
-
-
-# Only three functions remain: Is the board full? Has someone won? Do you want to play again?
-def full_board_check(board):
-    return len([x for x in board if x == "#"]) == 1
-
-
-def win_check(board, mark):
-    if board[1] == board[2] == board[3] == mark:
-        return True
-    if board[4] == board[5] == board[6] == mark:
-        return True
-    if board[7] == board[8] == board[9] == mark:
-        return True
-    if board[1] == board[4] == board[7] == mark:
-        return True
-    if board[2] == board[5] == board[8] == mark:
-        return True
-    if board[3] == board[6] == board[9] == mark:
-        return True
-    if board[1] == board[5] == board[9] == mark:
-        return True
-    if board[3] == board[5] == board[7] == mark:
-        return True
-    return False
-
-
-# We’re at our last function before our main program, 
-# and that’s just asking the users if they want to play again.
-def replay():
-    play_again = input("Would you like to play again (y/n)? ").strip()
-    if play_again.lower() == "y":
-        return True
-    if play_again.lower() == "n":
-        return False
-    
-
-if __name__ == "__main__":
-    print('Welcome to Tic Tac Toe!')
-    i = 1
-    # Choose your side
-    players=player_input()
-    # Empty board init
-    board = ['#'] * 10
-    while True:
-        # Set the game up here
-        game_on=full_board_check(board)
-        while not game_on:
-            # Player to choose where to put the mark
-            position = player_choice(board)
-            # Who's playin ? Choose the marker
-            if i % 2 == 0:
-                marker = players[1]
-            else:
-                marker = players[0]
-            # Play !
-            place_marker(board, marker, int(position))
-            # # Check the board
-            display_board(board)
-            i += 1
-            if win_check(board, marker):
-                print("You won !")
-                break
-            game_on=full_board_check(board)
-        if not replay():
+        if boxes[box] == ' ': # initial value
+            boxes[box] = player # set to value of current player
             break
         else:
-            i = 1
-            # Choose your side
-            players=player_input()
-            # Empty board init
-            board = ['#'] * 10
+            print('That box is already marked, try again.\n')
+
+
+def get_computer_move():
+    """ Return a random integer from 0 to 8, inclusive
+    """
+    return random.randint(0,8)
+        
+
+def switch_player(turn):
+    """ Switch the player based on how many moves have been made.
+        X starts the game so if this turn # is even, it's 0's turn. 
+    """
+    current_player = COMPUTER if turn % 2 == 0 else HUMAN
+    return current_player
+
+
+def check_for_win(player, turn):
+    """ Check for a win (or a tie). For each combo in winning_combos[],
+        count how many of its corresponding squares have the current 
+        player's mark. If a player's score count reaches 3, return a win.
+        If it doesn't, and this is already turn # 9, return a tie. If
+        neither, return False so the game continues.
+    """
+    if turn > 4: # need at least 5 moves before a win is possible
+        for combo in winning_combos:
+            score = 0
+            for index in combo:
+                if boxes[index] == player:
+                    score += 1
+                if score == 3:
+                    return 'win'
+
+        if turn == 9:
+            return 'tie'
+
+
+def play(player, turn):
+    """ Create a loop that keeps the game in play
+        until it ends in a win or tie
+    """
+    while True:
+        take_turn(player, turn)
+        print_board()
+        result = check_for_win(player, turn)
+        if result == 'win':
+            print('Game over. %s wins!\n' % player)
+            break
+        elif result == 'tie':
+            print('Game over. It\'s a tie.\n')
+            break
+        turn += 1
+        player = switch_player(turn)
+
+
+# Begin the game: 
+print('\n\nWelcome to Tic Tac Toe for two humans!')
+print_board(initial=True)
+play(first_player, turn)

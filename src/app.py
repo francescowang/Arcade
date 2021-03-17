@@ -4,8 +4,8 @@ import os
 
 # functions
 core.clear_terminal()
-core.welcome_message()
-core.press_enter()
+# core.welcome_message()
+# core.press_enter()
 
 # inputs
 username = input("What is your username? ")
@@ -21,4 +21,8 @@ while True:
     elif user == "1":
         core.clear_terminal()
         print("\n")
-        import play_vs_friend # impporting py file - is there a better way of importing the file?###
+        import play_vs_friend # impporting py file - is there a better way of importing the file?
+    elif user == "2":
+        core.clear_terminal()
+        print("\n")
+        import play_vs_computer

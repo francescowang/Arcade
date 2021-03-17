@@ -56,4 +56,3 @@ def thank_you():
     print(contents)
     file.close()
     
-
