@@ -1,4 +1,5 @@
 import random
+import core
 
 
 boxes = [ ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ]
@@ -57,7 +58,7 @@ def get_computer_move():
     """ Return a random integer from 0 to 8, inclusive
     """
     return random.randint(0,8)
-        
+
 
 def switch_player(turn):
     """ Switch the player based on how many moves have been made.
@@ -81,6 +82,7 @@ def check_for_win(player, turn):
                 if boxes[index] == player:
                     score += 1
                 if score == 3:
+                    core.congrats()
                     return 'win'
 
         if turn == 9:
