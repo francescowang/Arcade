@@ -1,6 +1,7 @@
 import sys # exit the programme cleanly
 import core # unresolved import -> select the correct Python interpreter
 import os
+import play_vs_computer
 
 # functions
 core.clear_terminal()
@@ -22,15 +23,4 @@ while True:
         core.clear_terminal()
         # print("\n")
         import play_vs_friend # impporting py file - is there a better way of importing the file?
-        input()
-    #     again = input("Would you like to play again? Yes or No\n")
-    #     again = again.lower()
-
-    #     if again == "yes" or "y":
-    #         player = True
-    #     elif again == "no" or "n":
-    #         play_vs_friend.play_game()
-    # elif user == "2":
-        core.clear_terminal()
-        # print("\n")
-        import play_vs_computer
+        break

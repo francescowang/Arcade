@@ -12,7 +12,7 @@
 (_____)                                                                 (_____)
 (_____)               Enter 1 to play against a friend                  (_____)
 (_____)                                                                 (_____)
-(_____)               Enter 2 to play guess numbers                     (_____)
+(_____)               Enter 2 to play against the computer              (_____)
 (_____)                                                                 (_____)
 (_____)               Enter 3 to play against an AI                     (_____)
 (_____)                                                                 (_____)

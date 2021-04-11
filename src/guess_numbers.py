@@ -1,6 +1,19 @@
 import random
 
-def guess(x):
+
+def guess_menu():
+    print('''
+Select [0] to exit the arcade.
+
+Select [1] to guess the computer's number.
+
+Select [2] for the computer to guess your number.
+
+Select [3] to return to the arcade menu.
+    ''')
+
+
+def player_guess(x):
     random_number = random.randint(1, x) # begins at 1
     guess = 0 # guess won't be 0
     while guess != random_number:
@@ -27,6 +40,8 @@ def computer_guess(x):
         elif feedback == 'l':
             low = guess + 1
     print(f"\nCongratulations. The computer guessed your number, {guess}, correctly.\n")
-    
-guess(1000)
-computer_guess(10000)
+
+
+def play():  
+    player_guess(1000)
+    computer_guess(10000)
