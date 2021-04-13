@@ -82,4 +82,55 @@ while True:
             elif user_value == "3":
                 core.clear_terminal()
                 import play_vs_ai
+            elif user_value == "4":
+                core.clear_terminal()
+                tictactoe_menu = False
+            else:
+                print(f"\nSorry {username}. Invalid input. Enter one of the available inputs.")
+    elif user == "4":
+        rockpaperscissors_menu = True
+        while rockpaperscissors_menu == True:
+            core.clear_terminal()
+            core.rockpaperscissors_menu()
+            user_value = input(f"Hi {username.strip()}. Please select the following options: ")
+            core.clear_terminal()
+            if user_value == "0":
+                core.thank_you()
+                sys.exit(0)
+            if user_value == "1":
+                core.clear_terminal()
+                import rps_vs_friend
+            if user_value == "2":
+                core.clear_terminal()
+                import rps_vs_computer
+            if user_value == "3":
+                core.clear_terminal()
+                import rps_vs_ai
+            if user_value == "4":
+                core.clear_terminal()
+                rockpaperscissors_menu = False
+            else:
+                print(f"\nSorry {username}. Invalid input. Enter one of the available inputs.")
+    elif user == "5":
+        hangman_menu = True
+        while hangman_menu == True:
+            core.clear_terminal()
+            core.hangman_menu()
+            user_value = input(f"Hi {username.strip()}. Please select the following options: ")
+            core.clear_terminal()
+            if user_value == "0":
+                core.thank_you()
+                sys.exit(0)
+            elif user_value == "1":
+                core.clear_terminal()
+                import hangman_vs_computer
+            elif user_value == "2":
+                core.clear_terminal()
+                import hangman_vs_ai
+            elif user_value == "3":
+                core.clear_terminal()
+                hangman_menu = False
+            else:
+                print(f"\nSorry {username}. Invalid input. Enter one of the available inputs.")
+                
 # connect_4.main()
