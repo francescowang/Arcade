@@ -184,8 +184,20 @@ def flip_player():
         current_player = "X"
     return
 
-play_game()
+# play_game()
 
+
+# this function can be exported to the app.py file
+def commence_game():
+    display_board()
+    play_game()
+    handle_turn(current_player)
+    check_for_winner()
+    check_rows()
+    check_columns()
+    check_diagonals()
+    check_if_tie()
+    flip_player()    
 
 
 # board

@@ -56,3 +56,36 @@ def thank_you():
     print(contents)
     file.close()
     
+
+
+###########
+
+# snake_menu for app.py
+def snake_menu():
+    # clear_terminal()
+    print('''
+    Select [0] to exit the arcade.
+
+    Select [1] to play snake on CLI.
+
+    Select [2] to play snake on PYGAME.
+
+    Select [3] to return to the arcade menu.
+    ''')
+
+
+# tic tac toe menu for app.py
+def tictactoe_menu():
+    print('''
+    Select [0] to exit the arcade.
+
+    Select [1] to play tic tac toe vs friend.
+
+    Select [2] to play tic tac toe vs computer.
+    
+    Select [3] to play tic tac toe vs AI.
+
+    Select [4] to return to the arcade menu.
+    ''')
+    
+    

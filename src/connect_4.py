@@ -1,7 +1,6 @@
 import random
 
 
-
 def winner(board):
     """This function accepts the Connect Four board as a parameter.
     If there is no winner, the function will return the empty string "".
@@ -15,7 +14,6 @@ def winner(board):
     return ""
 
 
-
 def display_board(board):
     """This function accepts the Connect Four board as a parameter.
     It will print the Connect Four board grid (using ASCII characters)
@@ -25,6 +23,7 @@ def display_board(board):
     This function does not return anything."""
 
     print("   0   1   2   3   4   5   6")
+    print()
     print("   " + board[0][0] + " | " + board[0][1] + " | " + board[0][2] + " | " + board[0][3] + " | " + board[0][
         4] + " | " + board[0][5] + " | " + board[0][6])
     print("  ---+---+---+---+---+---+---")
@@ -46,8 +45,8 @@ def display_board(board):
     print("   " + board[6][0] + " | " + board[6][1] + " | " + board[6][2] + " | " + board[6][3] + " | " + board[6][
         4] + " | " + board[6][5] + " | " + board[6][6])
     print()
- 
- 
+
+
 def make_user_move(board):
     """This function accepts the Connect Four board as a parameter.
     It will ask the user for a row and column.  If the row and
@@ -65,6 +64,7 @@ def make_user_move(board):
                     board[row][col] = 'X'
                     valid_move = True
     return board
+
 
 def make_computer_move(board):
     """This function accepts the Connect Four board as a parameter.
@@ -117,3 +117,6 @@ def main():
 
 # Start the game!
 main()
+
+# if __name__ == "__main__":
+#     main()
