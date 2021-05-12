@@ -89,15 +89,15 @@ def tictactoe_menu():
     ''')
     
 
-def rockpaperscissors_menu():
+def connect4_menu():
     print('''
     Select [0] to exit the arcade.
 
-    Select [1] to play rock paper scissors vs friend.
+    Select [1] to play connect4 vs friend.
 
-    Select [2] to play rock paper scissors vs computer.
+    Select [2] to play connect4 vs computer.
     
-    Select [3] to play rock paper scissors vs AI.
+    Select [3] to play commect4 vs AI.
     
     Select [4] to return to the arcade menu.
     ''')
@@ -111,5 +111,7 @@ def various_games():
 
     Select [2] to play rock paper scissors vs computer.
     
-    Select [3] to return to the arcade menu.
+    Select [3] to play space invaders.
+    
+    Select [4] to return to the arcade menu.
     ''')

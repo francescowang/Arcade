@@ -1,9 +1,9 @@
 import sys  # exit the programme cleanly
 import core  # unresolved import -> select the correct Python interpreter
 from guess_numbers import guess_number_menu, player_guess, computer_guess
-import play_vs_friend
-import play_vs_computer
-import play_vs_ai
+import tictactoe_friend
+import tictactoe_computer
+import tictactoe_ai
 
 # import connect_4
 
@@ -90,13 +90,13 @@ while True:
                 sys.exit(0)
             elif user_value == "1":
                 core.clear_terminal()
-                play_vs_friend.commence_game()
+                tictactoe_friend.commence_game()
             elif user_value == "2":
                 core.clear_terminal()
-                play_vs_computer.commence_game()
+                tictactoe_computer.commence_game()
             elif user_value == "3":
                 core.clear_terminal()
-                play_vs_ai.commence_game()
+                tictactoe_ai.commence_game()
             elif user_value == "4":
                 core.clear_terminal()
                 tictactoe_menu = False
@@ -105,10 +105,10 @@ while True:
                     f"\nSorry {username}. Invalid input. Enter one of the available inputs."
                 )
     elif user == "4":
-        rockpaperscissors_menu = True
-        while rockpaperscissors_menu == True:
+        connect4menu = True
+        while connect4menu == True:
             core.clear_terminal()
-            core.rockpaperscissors_menu()
+            core.connect4_menu()
             user_value = input(
                 f"Hi {username.strip()}. Please select the following options: "
             )
@@ -118,16 +118,16 @@ while True:
                 sys.exit(0)
             if user_value == "1":
                 core.clear_terminal()
-                
+                import connect4
             if user_value == "2":
                 core.clear_terminal()
-                
+                import connect4ai
             if user_value == "3":
                 core.clear_terminal()
-                
+                import connect4ai
             if user_value == "4":
                 core.clear_terminal()
-                rockpaperscissors_menu = False
+                connect4menu = False
             else:
                 print(
                     f"\nSorry {username}. Invalid input. Enter one of the available inputs."
@@ -149,13 +149,14 @@ while True:
                 import hangman
             elif user_value == "2":
                 core.clear_terminal()
-                import rps_vs_computer
+                import rps_computer
             elif user_value == "3":
                 core.clear_terminal()
-                hangman_menu = False
+                import space_invaders
+            elif user_value == "4":
+                core.clear_terminal()
+                various_games_menu = False
             else:
                 print(
                     f"\nSorry {username}. Invalid input. Enter one of the available inputs."
                 )
-
-# connect_4.main()

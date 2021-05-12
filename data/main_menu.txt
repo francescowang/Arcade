@@ -16,7 +16,7 @@
 (_____)                                                                 (_____)
 (_____)               Enter 3 for Tic Tac Toe                           (_____)
 (_____)                                                                 (_____)
-(_____)               Enter 4 for                              (_____) 
+(_____)               Enter 4 for Connect4                              (_____) 
 (_____)                                                                 (_____) 
 (_____)               Enter 5 for Various Games                         (_____) 
 (_____)                                                                 (_____)
