@@ -103,13 +103,13 @@ def rockpaperscissors_menu():
     ''')
     
     
-def hangman_menu():
+def various_games():
     print('''
     Select [0] to exit the arcade.
 
-    Select [1] to play hangman vs computer.
+    Select [1] to play hangman.
 
-    Select [2] to play rock paper scissors vs AI.
+    Select [2] to play rock paper scissors vs computer.
     
     Select [3] to return to the arcade menu.
     ''')

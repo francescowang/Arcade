@@ -108,9 +108,10 @@ def play(player, turn):
 
 
 # Begin the game: 
-print('\n\nWelcome to Tic Tac Toe for two humans!')
-print_board(initial=True)
-play(first_player, turn)
+def commence_game():
+    print('\n\nWelcome to Tic Tac Toe for two humans!')
+    print_board(initial=True)
+    play(first_player, turn)
 
 # def commence_game():
 #     print_board()
@@ -119,5 +120,5 @@ play(first_player, turn)
 #     switch_player(first_player)
 #     check_for_win(HUMAN, "X")
 #     play(HUMAN, "X")
-        
+
 

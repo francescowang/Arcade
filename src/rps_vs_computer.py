@@ -1,4 +1,5 @@
 import random
+import sys
 
 print('\nSelect the following options:', 'rock - ', 'paper - ', 'scissors')
 

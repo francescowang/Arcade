@@ -1,4 +1,4 @@
-#!/Users/francesco/Documents/tic-tac-toe/.venv/bin/python3
+#!/Users/franky/Documents/main_app/.venv/bin/python3.9
 # -*- coding: utf-8 -*-
 import re
 import sys
