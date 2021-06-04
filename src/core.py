@@ -64,54 +64,52 @@ def thank_you():
 def snake_menu():
     # clear_terminal()
     print('''
-    Select [0] to exit the arcade.
+Select [0] to exit the arcade.
 
-    Select [1] to play snake on CLI.
+Select [1] to play snake on CLI.
 
-    Select [2] to play snake on PYGAME.
+Select [2] to play snake on PYGAME.
 
-    Select [3] to return to the arcade menu.
+Select [3] to return to the arcade menu.
     ''')
 
 
 # tic tac toe menu for app.py
 def tictactoe_menu():
     print('''
-    Select [0] to exit the arcade.
+Select [0] to exit the arcade.
 
-    Select [1] to play tic tac toe vs friend.
+Select [1] to play tic tac toe vs friend.
 
-    Select [2] to play tic tac toe vs computer.
-    
-    Select [3] to play tic tac toe vs AI.
+Select [2] to play tic tac toe vs computer.
 
-    Select [4] to return to the arcade menu.
+Select [3] to play tic tac toe vs AI.
+
+Select [4] to return to the arcade menu.
     ''')
     
 
 def connect4_menu():
     print('''
-    Select [0] to exit the arcade.
+Select [0] to exit the arcade.
 
-    Select [1] to play connect4 vs friend.
+Select [1] to play connect4 vs friend.
 
-    Select [2] to play connect4 vs computer.
-    
-    Select [3] to play commect4 vs AI.
-    
-    Select [4] to return to the arcade menu.
+Select [2] to play commect4 vs AI.
+
+Select [3] to return to the arcade menu.
     ''')
     
     
 def various_games():
     print('''
-    Select [0] to exit the arcade.
+Select [0] to exit the arcade.
 
-    Select [1] to play hangman.
+Select [1] to play hangman.
 
-    Select [2] to play rock paper scissors vs computer.
-    
-    Select [3] to play space invaders.
-    
-    Select [4] to return to the arcade menu.
+Select [2] to play rock paper scissors vs computer.
+
+Select [3] to play space invaders.
+
+Select [4] to return to the arcade menu.
     ''')

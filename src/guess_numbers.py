@@ -15,7 +15,6 @@ Select [3] to return to the arcade menu.
     )
 
 
-
 def player_guess(x):
     random_number = random.randint(1, x)  # begins at 1
     guess = 0  # guess won't be 0
@@ -45,13 +44,14 @@ def computer_guess(x):
         elif feedback == "l":
             low = guess + 1
         elif feedback == "c":
-            print(f"\nCongratulations. The computer guessed your number, {guess}, correctly.\n")
-        n = input('press enter')
+            print(
+                f"\nCongratulations. The computer guessed your number, {guess}, correctly.\n"
+            )
+        n = input("press enter")
 
 
-# def play():
-#     player_guess(100)
-#     computer_guess(1000000000)
+def play_guess():
+    player_guess(10000)
+    computer_guess(10000)
 
-
-# play()
+# play_guess()

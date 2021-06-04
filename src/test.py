@@ -1,9 +1,12 @@
 import sys  # exit the programme cleanly
 import core  # unresolved import -> select the correct Python interpreter
 from guess_numbers import guess_number_menu, player_guess, computer_guess
+from snake_cli import snake_main
 import tictactoe_friend
 import tictactoe_computer
 import tictactoe_ai
+import hangman
+import rps_computer
 
 # import connect_4
 
@@ -40,7 +43,7 @@ while True:
                 sys.exit(0)
             elif user_value == "1":
                 core.clear_terminal()
-                player_guess(10)  # x is now 10
+                player_guess(10000)  # x is now 10
             elif user_value == "2":
                 core.clear_terminal()
                 computer_guess(10000)  # x is now 10000
@@ -65,7 +68,7 @@ while True:
                 sys.exit(0)
             elif user_value == "1":
                 core.clear_terminal()
-                import snake_cli
+                snake_main()
             elif user_value == "2":
                 core.clear_terminal()
                 import snake_pygame
@@ -124,9 +127,6 @@ while True:
                 import connect4ai
             if user_value == "3":
                 core.clear_terminal()
-                import connect4ai
-            if user_value == "4":
-                core.clear_terminal()
                 connect4menu = False
             else:
                 print(
@@ -146,10 +146,10 @@ while True:
                 sys.exit(0)
             elif user_value == "1":
                 core.clear_terminal()
-                import hangman
+                hangman.hangman_main()
             elif user_value == "2":
                 core.clear_terminal()
-                import rps_computer
+                rps_computer.rsp_computer()
             elif user_value == "3":
                 core.clear_terminal()
                 import space_invaders
